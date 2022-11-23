@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <%- include('preDefinicao.ejs') %>
+<body>
+<%- include('navegacao.ejs') %>
+    
+    <form action="/contato" method="POST">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="img/undraw_remotely_2j6y.svg" alt="Image" class="img-fluid">
+          </div>
+          <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card border-0 shadow rounded-3 my-5">
+              <div class="card-body p-4 p-sm-5">
+                <div class="row justify-content-center">
+                  <div class="col-md-8">
+                    <div class="mb-4">
+                    <h3>Fale Conosco!</h3>
+                    <p class="mb-4">Deixe sua mensagem ou sugestão.</p>
+                  </div>
+
+                <div><%= mensagem %></div>
+                
+                <form>
+                  <div class="form-group first">
+                    <label for="nome">Nome</label>
+                    <input  name="nome"  type="text" class="form-control" id="nome">
+    
+                  </div>
+                  <div class="form-group first">
+                    <label for="email">E-Mail</label>
+                    <input name="email" type="email" class="form-control" id="email">
+    
+                  </div>
+                  <div class="form-group first">
+                    <label for="mensagem">Mensagem</label>
+                    <input name="mensagem" type="text" class="form-control" id="mensagem">
+    
+                  </div>
+                  
+                  <div class="d-flex mb-5 align-items-center">
+                    <label class="control control--checkbox mb-0"><span class="caption">Ao clicar em Enviar você concorda com nossos <a href="/paginainicial">Termos e Condições</a></span>
+                      <input type="checkbox" checked="checked"/>
+                      <div class="control__indicator"></div>
+                    </label>
+                  </div>
+    
+                  <input type="submit" value="Enviar" class="btn btn-block btn-primary">
+     </form>
+              </div> 
+            </div> 
+          </div> 
+        </div> 
+      </div> 
+    </form>
+
+  <%- include('rodape.ejs') %>   
+   </body>
+</html>

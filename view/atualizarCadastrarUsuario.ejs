@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <%- include('preDefinicao.ejs') %>
+<body>
+    <%- include('navegacao.ejs') %>
+    
+    <section class="container">
+
+        <h1>O que deseja realizar?</h1>
+        <h4>Selecione a opção:</h4>
+
+        <a href="/atualizardadosdousuario/listar">Ver lista de cadastrados</a>
+        <br>
+        <a href="/atualizardadosdousuario/consultar">Consultar um usuário</a>
+        <br>
+        <a href="/atualizardadosdousuario/atualizar">Atualizar cadastro</a>
+        <br>
+        <a href="/atualizardadosdousuario/deletar">Deletar usuário</a>
+
+            <%if (mensagem) %> <p><%=mensagem%></p>
+    </section>
+
+    <%- include('rodape.ejs') %>    
+
+    </body>
+</html>

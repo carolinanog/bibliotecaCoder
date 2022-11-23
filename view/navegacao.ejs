@@ -1,0 +1,12 @@
+<header>
+    <div class="page">
+    <nav class="page__menu page__custom-settings menu Navegacao">
+        
+        <a href="/paginainicial"><img src="/img/logo.png" alt="Biblioteca Coder" height="40px"></a><h1><code><b>Biblioteca Coder._</b></code></h1>
+        <ul class="menu__list r-list">
+        
+        <%links.forEach(element=> {%><a href=<%=element.href%> class="menu__link r-link text-underlined"><b><%=element.label%></b></a> <%})%>
+        </ul>
+    </nav>
+    </div>
+</header>

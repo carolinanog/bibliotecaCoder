@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <%- include('preDefinicao.ejs') %>
+<body>
+    <%- include('navegacao.ejs') %>
+    
+    <section class="container">
+
+        <h1>Atualizar dados de um livro do acervo</h1>
+        <h4>Preencha o ISBN do livro a ser alterado: </h4>
+        <div class="container">
+            <form action="/atualizardadosacervo/alterar" method="POST">
+                <div class="mb-3"></div><label for="isbn">ISBN: </label>
+                <input type="text" id="isbn" name="isbn" required></div>
+                <button type="submit"> Enviar </button>
+            </form>
+
+            <form action="/atualizardadosacervo/alterar/<%=isbn%>" enctype="multipart/form-data" method="POST">
+                
+                 <%row.forEach(function(row){ %> 
+                <input type="radio" id="categoria" name="categoria" value="<%=row.id%>" 
+                <% if (row.id === row1.categoria) { %>
+                    checked
+                <% } %> > 
+                <label for="html"><%=row.categoriaLabel%></label><br>
+                <%})%>
+                <div class="mb-3"></div><label for="titulo">Titulo: </label>
+                <input type="text" id="titulo" name="titulo" value="<%=row1.titulo%>" required></div>
+            
+                <div class="mb-3"></div><label for="autoria">Autoria: </label>
+                <input type="text" id="autoria" name="autoria" value="<%=row1.autoria%>" required></div>
+                
+                <div class="mb-3"></div><label for="ano_publicacao">Ano de publicação: </label>
+                <input type="number" id="ano_publicacao" name="ano_publicacao" value="<%=row1.ano_publicacao%>" required></div>
+            
+                <div class="mb-3"></div><label for="isbn">ISBN: </label>
+                <input type="text" id="isbn" name="isbn" value="<%=row1.isbn%>" disabled ></div>
+
+                <div class="mb-3">
+                <label for="image" class="form-label">Faça o upload da imagem da capa do livro:</label> <input type="file" multiple="true" class="form-control" name="imagem" aria-describedby="imagem do produto" accept="image/*" >
+                </div>
+
+                <div class="mb-3"></div><label for="quantidade">Quantidade: </label>
+                <input type="number" id="quantidade" name="quantidade" value="<%=row1.quantidade%>"  required></div>
+
+                <div class="mb-3"></div><label for="sinopse">Sinopse: </label>
+                <input type="text" id="sinopse" name="sinopse" value="<%=row1.sinopse%>" required></div>
+
+                <button type="submit"> Enviar </button>
+            
+            </form>
+</div>
+            <%if (mensagem) %> <p><%=mensagem%></p>
+    </section>
+
+    <%- include('rodape.ejs') %>    
+
+    </body>
+</html>

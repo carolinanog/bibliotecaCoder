@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <%- include('preDefinicao.ejs') %>
+<body>
+    <%- include('navegacao.ejs') %>
+<section class="container row col-8 card text-center bg-light mb-3 card-header card-body" style="text-align: justify">
+
+    <h3>Os detalhes do livro são: </h3>
+    
+    <table border="0">
+        <thead>
+            <tr>
+            </tr>
+        </thead>
+        <tbody> 
+            <tr>
+                <td rowspan="5">
+                    <figure>
+                        <img src="/img/<%=row.imagem%>" width="200px" alt="" class="card-img-top">
+                    </figure>
+                </td>
+                <td><b>Título: </b><%=row.titulo%></td>
+            </tr>
+            <tr>
+                <td><b>Autoria: </b><%=row.autoria%></td>
+            </tr>
+            <tr>
+                <td><b>Categoria: </b><%=cat.categoriaLabel%></td>
+            </tr>
+            <tr>
+                <td><b>Ano de Publicação: </b><%=row.ano_publicacao%></td>
+            </tr>
+            <tr>
+                <td>
+                    <div style="text-align: justify"><b>Sinopse: </b><%=row.sinopse%></td>
+                    </div>
+            </tr>
+            <tr>
+                <td><b>ISBN: </b><%=row.isbn%></td>
+                <td><b>Quantidade disponível no acervo: </b><%=row.quantidade%></td>
+            </tr>
+        </tbody>
+    </table>
+    <br></br>
+  
+</section>   
+     <%- include('rodape.ejs') %>    
+</body>
+</html>

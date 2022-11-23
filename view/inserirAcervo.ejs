@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <%- include('preDefinicao.ejs') %>
+<body>
+    <%- include('navegacao.ejs') %>
+    
+    <section class="container">
+
+        <h1>Inserir um livro no acervo</h1>
+        <h4>Preencha os dados do livro a ser inserido</h4>
+        <div class="container">
+            <form action="/atualizardadosacervo/inserir" enctype="multipart/form-data" method="POST">
+                
+                 <%row.forEach(function(row){ %>
+                <input type="radio" id="categoria" name="categoria" value="<%=row.id%>">
+                <label for="html"><%=row.categoriaLabel%></label><br>
+                <%})%>
+                <div class="mb-3"></div><label for="titulo">Titulo: </label>
+                <input type="text" id="titulo" name="titulo" required></div>
+            
+                <div class="mb-3"></div><label for="autoria">Autoria: </label>
+                <input type="text" id="autoria" name="autoria" required></div>
+                
+                <div class="mb-3"></div><label for="ano_publicacao">Ano de publicação: </label>
+                <input type="number" id="ano_publicacao" name="ano_publicacao" required></div>
+            
+                <div class="mb-3"></div><label for="isbn">ISBN: </label>
+                <input type="text" id="isbn" name="isbn" required></div>
+
+                <div class="mb-3">
+                <label for="image" class="form-label">Faça o upload da imagem da capa do livro:</label> <input type="file" multiple="true" class="form-control" name="imagem" aria-describedby="imagem do produto" accept="image/*" required>
+                </div>
+
+                <div class="mb-3"></div><label for="quantidade">Quantidade: </label>
+                <input type="number" id="quantidade" name="quantidade" required></div>
+
+                <div class="mb-3"></div><label for="sinopse">Sinopse: </label>
+                <input type="text" id="sinopse" name="sinopse" required></div>
+
+                <button type="submit"> Enviar </button>
+            
+            </form>
+</div>
+            <%if (mensagem) %> <p><%=mensagem%></p>
+    </section>
+
+    <%- include('rodape.ejs') %>    
+
+    </body>
+</html>

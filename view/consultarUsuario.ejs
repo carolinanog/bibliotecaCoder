@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <%- include('preDefinicao.ejs') %>
+<body>
+    <%- include('navegacao.ejs') %>
+    
+    <h1>Consultar Usuário</h1>
+    <h4>Digite o CPF do usuário correspondente</h4>
+
+        <form action="/atualizardadosdousuario/consultar" method="POST">
+                    
+            <label for="CPF">CPF: </label>
+            <input type="text" id="CPF" name="CPF" required>
+            <br>
+            <button type="submit"> Enviar </button>
+        
+        </form>
+
+        <%if (mensagem) %> <p><%=mensagem%></p>
+        <%if (row) {%> 
+            <table border="2">
+                <tbody> 
+                    <tr>
+                        <td rowspan="3"><b>CPF: </b><%=row.CPF%></td>
+                        <td><b>Nome: </b><%=row.nome%></td>
+                    </tr>
+                    <tr>
+                        <td><b>Telefone: </b><%=row.telefone%></td>
+                    </tr>
+                    <tr>
+                        <td><b>Email: </b><%=row.email%></td>
+                    </tr>
+                </tbody>
+            </table>
+        <%}%>
+</section>
+    <%- include('rodape.ejs') %>    
+
+    </body>
+</html>

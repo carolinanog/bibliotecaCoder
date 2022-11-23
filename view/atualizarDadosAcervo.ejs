@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <%- include('preDefinicao.ejs') %>
+<body>
+    <%- include('navegacao.ejs') %>
+    
+    <section class="container">
+
+        <h1>O que deseja realizar?</h1>
+        <h4>Selecione as opções</h4>
+
+        <a href="/atualizardadosacervo/alterar">Atualizar dados de um livro</a>
+        <br>
+        <a href="/atualizardadosacervo/inserir">Inserir um livro no acervo</a>
+        <br>
+        <a href="/atualizardadosacervo/deletar">Deletar um livro</a>
+
+            <%if (mensagem) %> <p><%=mensagem%></p>
+    </section>
+
+    <%- include('rodape.ejs') %>    
+
+    </body>
+</html>

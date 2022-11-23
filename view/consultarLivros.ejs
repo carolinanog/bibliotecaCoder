@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <%- include('preDefinicao.ejs') %>
+<body>
+      <%- include('navegacao.ejs') %>
+      <section>
+      <h3><b>Selecione a categoria para consultar o acervo, ou veja todo o nosso acervo mais abaixo:</h3></section></b>
+      <h4>Pesquise nosso acervo pelas categorias: </h4>
+          <!-- <form action="/acervodelivros" method="POST"> -->
+      <div class="container text-center ">
+      <section id="categoria">
+        <div class="row margin: 100px ">
+          <% categoria.forEach(item => {%>
+            <div class="col-sm-3">
+              <div class="card border-0" style="width: 18rem;">
+                <a href="/acervodelivros/categoria/<%=item.id%>"><%=item.categoriaLabel%> <br>
+                <img src="/img/<%=item.imagem%>" alt="Avatar" style="width:30px"> 
+                </a> 
+              </div><br>
+            </div>
+            <%})%>
+        </section>
+     </div> 
+    </div>
+
+<br>
+<Br>
+      <h3><b>Consulte aqui todo o nosso acervo:</h3></b>
+            <section id="acervo">
+        <div class="row text-center">
+          <% row.forEach(book => {%>
+            <div class="col-sm-4 ">
+              <div class="card border-0 card-body d-flex flex-column">
+                <h5><a class = "acervo" href="/acervodelivros/livro/<%=book.isbn%>"><%=book.titulo%></h5> <br>
+                  
+                <img class = "images" src="/img/<%=book.imagem%>" alt="Avatar" style="width:40%">
+                </a>
+              </div><br>
+            </div>
+            <%})%>
+        </section>
+     </div> 
+    </div>
+
+  </section>
+  <%- include('rodape.ejs') %>    
+</body>
+</html>
+
+
+
+
+  

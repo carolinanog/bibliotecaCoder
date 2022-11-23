@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <%- include('preDefinicao.ejs') %>
+<body>
+    <%- include('navegacao.ejs') %>
+    <br>
+    <div class="container">
+        <h3 class="entry-title1" style="text-align:center">Conheça nossa Equipe</h3><br>
+          <section id="bibliotecarios">
+            <div class="row">
+              <% bibliotecarios.forEach(bibliotecario => { %>
+                <div class="col-3">
+                    <div class="card text-center" style="width: 15rem;">
+                      <img src="/img/equipe/<%= bibliotecario.foto %>" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title"><%= bibliotecario.nome %></h5>
+                      </div>
+                    </div>
+                </div>
+              <% }); %>
+            </div>
+          </section>
+        </div><br>
+    <%- include('rodape.ejs') %>    
+    </body>
+</html>
+

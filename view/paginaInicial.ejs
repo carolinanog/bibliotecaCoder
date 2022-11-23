@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <%- include('preDefinicao.ejs') %>
+<body>
+    <%- include('navegacao.ejs') %>
+    <br>
+    <article>
+        <div>
+            <h3 class="entry-title1" style="text-align:center">Seja bem vindo(a) à <code>Biblioteca Coder._</code></h3><br>    
+        </div>    
+
+            <div> 
+                <h3 class="entry-title2" style="text-align:center">Nossa missão: </h3> 
+                    <p style="text-align:center" class="entry-content">
+                    <b>"Promover o acesso gratuito de livros de diferentes categorias e incentivar o uso e a geração da informação, contribuindo para o desenvolvimento pessoal e profissional de seus usuários."</b> 
+                    </p><br>
+            </div>
+
+                <div class="container">
+                    <div class="row" align="center">
+
+                        <div class="col-6">
+                            <div class="card text-center bg-light mb-3" style="max-width: 15rem;">
+                                <div class="card-header">Cadastrar Usuário</div>
+                                    <img class="card-img-top" src="/img/_cadastro.jpeg" alt="Card image cap">
+                                    <div class="card-body">
+                                    <p class="card-text">É novo por aqui e quer se cadastrar na nossa biblioteca?</p>
+                                    <a href="/cadastrarusuario" class="btn btn-primary btn-lg btn-block">Ir</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <div class="col-6">
+                            <div class="card text-center" style="width: 15rem;">
+                                <div class="card-header">Acervo de Livros</div>
+                                    <img class="card-img-top" src="/img/_livros.jpeg" alt="Card image cap">
+                                    <div class="card-body">
+                                    <p class="card-text">Quer conhecer nosso acervo?</p>
+                                    <a href="acervodelivros" class="btn btn-primary btn-lg btn-block">Ir</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+    </article><br>
+
+    <%- include('rodape.ejs') %>    
+    </body>
+</html>
+
+
+  
+  

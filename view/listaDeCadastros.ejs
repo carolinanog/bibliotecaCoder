@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <%- include('preDefinicao.ejs') %>
+<body>
+    <%- include('navegacao.ejs') %>
+    
+    <h1>Usuários Cadastrados</h1>
+    
+        <%row.forEach(item => {%>
+            <table border="2">
+                <tbody> 
+                    <tr>
+                        <td rowspan="3"><b>CPF: </b><%=item.CPF%></td>
+                        <td><b>Nome: </b><%=item.nome%></td>
+                    </tr>
+                    <tr>
+                        <td><b>Telefone: </b><%=item.telefone%></td>
+                    </tr>
+                    <tr>
+                        <td><b>Email: </b><%=item.email%></td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+        <% })%>
+</section>
+    <%- include('rodape.ejs') %>    
+
+    </body>
+</html>
